@@ -1,11 +1,13 @@
 type Course {
-  _id: ID
-  title: String
+  _id: ID!
+  title: String!
   teacher: String
-  decription: String
+  decription: String!
   topic: String
 }
 
 type Query {
   getCourses: [Course]
+  getCourse(id: Int!): Course
+
 }
