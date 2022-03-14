@@ -8,6 +8,5 @@ type Course {
 
 type Query {
   getCourses: [Course]
-  getCourse(id: Int!): Course
-
+  getCourse(id: ID!): Course
 }

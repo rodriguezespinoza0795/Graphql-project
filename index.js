@@ -5,7 +5,6 @@ const { buildSchema } = require('graphql');
 const { readFileSync } = require('fs')
 const { join } = require('path')
 const resolvers = require('./lib/resolvers')
-require('dotenv').config()
 
 const typeDefs = buildSchema(readFileSync(join(__dirname, 'lib', 'schema.graphql'), 'utf8'));
 
