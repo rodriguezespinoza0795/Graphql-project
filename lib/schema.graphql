@@ -6,9 +6,17 @@ type Course {
   topic: String
 }
 
+type Student {
+  _id: ID!
+  name: String!
+  mail: String!
+}
+
 type Query {
   getCourses: [Course]
   getCourse(id: ID!): Course
+  getStudents: [Student]
+  getStudent(id: ID!): Student
 }
 
 input CourseInput {
@@ -18,6 +26,14 @@ input CourseInput {
   topic: String
 }
 
+input StudentInput {
+  name: String!
+  mail: String!
+}
+
 type Mutation {
   createCourse(input: CourseInput!): Course
+  editCourse(id:ID!, input: CourseInput!): Course
+  createStudent(input: StudentInput!): Student
+  editStudent(id:ID!, input: StudentInput!): Student
 }
