@@ -4,6 +4,7 @@ type Course {
   teacher: String
   decription: String!
   topic: String
+  people: [Student]
 }
 
 type Student {
@@ -36,4 +37,5 @@ type Mutation {
   editCourse(id:ID!, input: CourseInput!): Course
   createStudent(input: StudentInput!): Student
   editStudent(id:ID!, input: StudentInput!): Student
+  addPerson(courseID: ID!, studentID: ID!): Course
 }
